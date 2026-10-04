@@ -1,0 +1,489 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="refresh" content="30">
+<title>Locklobster</title><style>
+:root{--bg:#12141a;--card:#1b1e26;--fg:#e8eaf0;--muted:#8b93a7;--line:#2a2f3a;
+      --good:#39d98a;--warn:#f5c451;--bad:#ff6b6b;--info:#7aa2f7}
+*{box-sizing:border-box}
+body{margin:0;padding:16px;background:var(--bg);color:var(--fg);
+     font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:760px;margin:0 auto}
+h1{font-size:12px;font-weight:600;color:var(--muted);margin:0 0 10px;letter-spacing:.08em;text-transform:uppercase}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:12px}
+.verdict{font-size:26px;font-weight:700}
+.good{color:var(--good)}.warn{color:var(--warn)}.bad{color:var(--bad)}.info{color:var(--info)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(96px,1fr));gap:12px}
+.stat .k{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.stat .v{font-size:21px;font-weight:600;font-variant-numeric:tabular-nums}
+.row{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.muted{color:var(--muted);font-size:12px}
+.spark{width:100%;height:110px;color:var(--good);display:block}
+ul{list-style:none;margin:0;padding:0}
+li{padding:8px 0;border-bottom:1px solid var(--line);font-size:13px;word-break:break-word}
+li:last-child{border-bottom:none}
+.when{color:var(--muted);font-size:11px;display:inline-block;min-width:84px}
+.who{display:inline-block;min-width:74px;font-size:10px;text-transform:uppercase;
+     letter-spacing:.06em;color:var(--muted)}
+.what{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px}
+.big{font-size:32px;font-weight:700;font-variant-numeric:tabular-nums}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+.chip{border:1px solid var(--line);background:transparent;color:var(--muted);
+      border-radius:999px;padding:4px 11px;font-size:11px;cursor:pointer;
+      text-transform:uppercase;letter-spacing:.05em;font-family:inherit}
+.chip[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+table{width:100%;border-collapse:collapse;font-size:13px}
+td,th{text-align:left;padding:6px 8px 6px 0;border-bottom:1px solid var(--line);
+      font-variant-numeric:tabular-nums}
+th{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;font-weight:600}
+</style></head><body><div class="wrap">
+
+<h1>Now</h1>
+<div class="card">
+  <div class="row"><div class="verdict good">walking the circuit</div>
+    <div class="muted" data-ts="1791135529051"></div></div>
+  <div class="muted" style="margin-top:6px">at Thomas Mordan &middot; 0 oils possible &middot; 28 slots free</div>
+</div>
+
+<h1>Stock</h1>
+<div class="card"><div class="grid">
+  <div class="stat"><div class="k">Oil</div><div class="v ">0</div></div>
+  <div class="stat"><div class="k">Seeds</div><div class="v ">102</div></div>
+  <div class="stat"><div class="k">Dust</div><div class="v ">142</div></div>
+  <div class="stat"><div class="k">Vials</div><div class="v warn">0</div></div>
+  <div class="stat"><div class="k">Free</div><div class="v ">28</div></div>
+  <div class="stat"><div class="k">Purse</div><div class="v ">94g 21s 99c</div></div>
+</div>
+<img src="live.jpg?t=1791135652096" alt="live view" style="width:100%;margin-top:14px;
+  border-radius:8px;border:1px solid var(--line);display:block" onerror="this.style.display='none'">
+</div>
+
+<h1>This run</h1>
+<div class="card"><div class="grid">
+  <div class="stat"><div class="k">Oils left</div><div class="v ">0</div></div>
+  <div class="stat"><div class="k">Ends in</div><div class="v ">&mdash;</div></div>
+  <div class="stat"><div class="k">Profit left</div><div class="v good">0c</div></div>
+  <div class="stat"><div class="k">Purse at end</div><div class="v ">94g 21s 99c</div></div>
+</div></div>
+
+<h1>Rate</h1>
+<div class="card"><div class="grid">
+  <div class="stat"><div class="k">Best pace</div><div class="v ">0.95s</div></div>
+  <div class="stat"><div class="k">Pace now</div><div class="v ">2.30s</div></div>
+  <div class="stat"><div class="k">Profit / oil</div><div class="v ">1s 16c</div></div>
+  <div class="stat"><div class="k">Ideal /h</div><div class="v ">16.72g/h</div></div>
+  <div class="stat"><div class="k">Profit 1h</div><div class="v ">3.88g/h</div></div>
+  <div class="stat"><div class="k">Profit 24h</div><div class="v ">0.65g/h</div></div>
+  <div class="stat"><div class="k">s/oil 24h</div><div class="v ">2.15s</div></div>
+  <div class="stat"><div class="k">s/oil all</div><div class="v ">2.50s</div></div>
+  <div class="stat"><div class="k">Crafted</div><div class="v ">2538</div></div>
+  <div class="stat"><div class="k">Sold</div><div class="v ">2586</div></div>
+</div></div>
+
+<h1>Gold and stock &mdash; the whole run</h1>
+<div class="card">
+  <svg class="spark" viewBox="0 -6 640 134" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Purse across every round">
+    <path d="M0.0 110 L0.0 107.0 L0.2 107.0 L0.6 107.0 L0.8 104.3 L1.2 107.0 L2.7 102.2 L3.8 98.9 L9.4 96.2 L11.2 99.7 L12.4 97.8 L13.1 95.2 L13.7 93.6 L24.3 91.8 L25.0 89.9 L25.6 88.2 L26.3 86.1 L26.9 84.7 L27.8 85.8 L28.6 83.5 L30.2 81.1 L30.9 79.0 L32.5 79.6 L33.2 77.8 L35.0 74.9 L35.5 73.3 L36.8 73.4 L37.3 72.2 L41.1 68.7 L41.5 67.7 L43.0 67.2 L43.3 66.5 L45.8 62.5 L46.0 62.0 L47.6 61.3 L47.8 60.8 L50.2 60.7 L58.5 106.2 L58.6 106.2 L58.8 106.1 L58.9 106.0 L59.0 105.9 L59.2 105.8 L59.3 105.7 L59.4 105.6 L59.6 105.5 L59.7 105.4 L59.8 105.3 L60.0 105.3 L60.1 105.2 L60.2 105.1 L60.4 105.0 L60.5 104.9 L60.6 104.8 L60.8 104.7 L60.9 104.5 L61.1 104.3 L61.3 104.0 L61.5 103.7 L61.7 103.5 L61.9 103.2 L62.1 102.9 L62.2 102.7 L177.9 104.4 L178.1 104.2 L178.2 104.1 L178.4 103.9 L178.5 103.7 L178.7 103.5 L179.0 103.3 L179.2 103.2 L179.3 102.9 L179.6 102.5 L179.7 102.2 L180.0 101.5 L180.2 103.8 L180.5 103.2 L180.7 102.7 L181.0 102.2 L181.1 102.1 L184.2 101.7 L184.5 101.2 L184.7 100.8 L185.0 100.1 L185.3 99.4 L185.6 98.7 L186.0 97.7 L186.3 97.2 L186.6 96.3 L187.0 95.4 L187.2 94.8 L187.8 97.3 L188.2 96.6 L188.5 95.6 L188.9 94.6 L189.4 93.3 L190.0 91.8 L190.3 93.6 L191.5 92.7 L192.0 91.5 L192.4 90.2 L193.0 88.7 L193.6 86.9 L194.3 85.3 L194.6 84.6 L195.4 86.2 L196.0 84.3 L196.8 81.9 L197.3 83.4 L199.9 81.5 L200.8 79.2 L201.7 76.6 L202.5 74.4 L277.0 75.1 L287.3 72.0 L288.3 69.1 L288.6 68.8 L290.2 68.9 L291.4 65.4 L291.7 67.6 L347.4 65.2 L348.6 62.5 L349.9 59.3 L350.5 58.6 L353.0 58.9 L354.3 55.5 L355.5 55.6 L361.2 52.3 L362.8 48.3 L364.6 49.9 L368.3 46.1 L369.5 42.6 L516.6 40.8 L518.5 38.9 L519.3 36.6 L520.2 34.0 L520.5 33.6 L521.8 34.5 L522.7 31.9 L523.8 28.7 L524.2 31.3 L526.3 28.5 L527.4 25.2 L528.6 22.2 L616.0 36.0 L616.8 33.8 L617.8 31.3 L618.0 33.6 L620.8 31.4 L621.7 28.9 L622.8 25.9 L623.3 24.6 L624.9 25.2 L626.0 22.1 L627.1 21.6 L629.5 19.7 L634.9 10.5 L635.8 8.1 L636.2 7.3 L637.5 8.4 L638.3 6.0 L639.4 3.0 L640.0 5.0 L640.0 110 Z" fill="var(--good)" opacity=".12"/>
+    <path d="M0.0 107.0 L0.2 107.0 L0.6 107.0 L0.8 104.3 L1.2 107.0 L2.7 102.2 L3.8 98.9 L9.4 96.2 L11.2 99.7 L12.4 97.8 L13.1 95.2 L13.7 93.6 L24.3 91.8 L25.0 89.9 L25.6 88.2 L26.3 86.1 L26.9 84.7 L27.8 85.8 L28.6 83.5 L30.2 81.1 L30.9 79.0 L32.5 79.6 L33.2 77.8 L35.0 74.9 L35.5 73.3 L36.8 73.4 L37.3 72.2 L41.1 68.7 L41.5 67.7 L43.0 67.2 L43.3 66.5 L45.8 62.5 L46.0 62.0 L47.6 61.3 L47.8 60.8 L50.2 60.7 L58.5 106.2 L58.6 106.2 L58.8 106.1 L58.9 106.0 L59.0 105.9 L59.2 105.8 L59.3 105.7 L59.4 105.6 L59.6 105.5 L59.7 105.4 L59.8 105.3 L60.0 105.3 L60.1 105.2 L60.2 105.1 L60.4 105.0 L60.5 104.9 L60.6 104.8 L60.8 104.7 L60.9 104.5 L61.1 104.3 L61.3 104.0 L61.5 103.7 L61.7 103.5 L61.9 103.2 L62.1 102.9 L62.2 102.7 L177.9 104.4 L178.1 104.2 L178.2 104.1 L178.4 103.9 L178.5 103.7 L178.7 103.5 L179.0 103.3 L179.2 103.2 L179.3 102.9 L179.6 102.5 L179.7 102.2 L180.0 101.5 L180.2 103.8 L180.5 103.2 L180.7 102.7 L181.0 102.2 L181.1 102.1 L184.2 101.7 L184.5 101.2 L184.7 100.8 L185.0 100.1 L185.3 99.4 L185.6 98.7 L186.0 97.7 L186.3 97.2 L186.6 96.3 L187.0 95.4 L187.2 94.8 L187.8 97.3 L188.2 96.6 L188.5 95.6 L188.9 94.6 L189.4 93.3 L190.0 91.8 L190.3 93.6 L191.5 92.7 L192.0 91.5 L192.4 90.2 L193.0 88.7 L193.6 86.9 L194.3 85.3 L194.6 84.6 L195.4 86.2 L196.0 84.3 L196.8 81.9 L197.3 83.4 L199.9 81.5 L200.8 79.2 L201.7 76.6 L202.5 74.4 L277.0 75.1 L287.3 72.0 L288.3 69.1 L288.6 68.8 L290.2 68.9 L291.4 65.4 L291.7 67.6 L347.4 65.2 L348.6 62.5 L349.9 59.3 L350.5 58.6 L353.0 58.9 L354.3 55.5 L355.5 55.6 L361.2 52.3 L362.8 48.3 L364.6 49.9 L368.3 46.1 L369.5 42.6 L516.6 40.8 L518.5 38.9 L519.3 36.6 L520.2 34.0 L520.5 33.6 L521.8 34.5 L522.7 31.9 L523.8 28.7 L524.2 31.3 L526.3 28.5 L527.4 25.2 L528.6 22.2 L616.0 36.0 L616.8 33.8 L617.8 31.3 L618.0 33.6 L620.8 31.4 L621.7 28.9 L622.8 25.9 L623.3 24.6 L624.9 25.2 L626.0 22.1 L627.1 21.6 L629.5 19.7 L634.9 10.5 L635.8 8.1 L636.2 7.3 L637.5 8.4 L638.3 6.0 L639.4 3.0 L640.0 5.0" fill="none" stroke="var(--good)" stroke-width="1.8" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+    <circle cx="0.0" cy="107.0" r="1.8" fill="var(--good)"/><circle cx="0.2" cy="107.0" r="1.8" fill="var(--good)"/><circle cx="0.6" cy="107.0" r="1.8" fill="var(--good)"/><circle cx="0.8" cy="104.3" r="1.8" fill="var(--good)"/><circle cx="1.2" cy="107.0" r="1.8" fill="var(--good)"/><circle cx="2.7" cy="102.2" r="1.8" fill="var(--good)"/><circle cx="3.8" cy="98.9" r="1.8" fill="var(--good)"/><circle cx="9.4" cy="96.2" r="1.8" fill="var(--good)"/><circle cx="11.2" cy="99.7" r="1.8" fill="var(--good)"/><circle cx="12.4" cy="97.8" r="1.8" fill="var(--good)"/><circle cx="13.1" cy="95.2" r="1.8" fill="var(--good)"/><circle cx="13.7" cy="93.6" r="1.8" fill="var(--good)"/><circle cx="24.3" cy="91.8" r="1.8" fill="var(--good)"/><circle cx="25.0" cy="89.9" r="1.8" fill="var(--good)"/><circle cx="25.6" cy="88.2" r="1.8" fill="var(--good)"/><circle cx="26.3" cy="86.1" r="1.8" fill="var(--good)"/><circle cx="26.9" cy="84.7" r="1.8" fill="var(--good)"/><circle cx="27.8" cy="85.8" r="1.8" fill="var(--good)"/><circle cx="28.6" cy="83.5" r="1.8" fill="var(--good)"/><circle cx="30.2" cy="81.1" r="1.8" fill="var(--good)"/><circle cx="30.9" cy="79.0" r="1.8" fill="var(--good)"/><circle cx="32.5" cy="79.6" r="1.8" fill="var(--good)"/><circle cx="33.2" cy="77.8" r="1.8" fill="var(--good)"/><circle cx="35.0" cy="74.9" r="1.8" fill="var(--good)"/><circle cx="35.5" cy="73.3" r="1.8" fill="var(--good)"/><circle cx="36.8" cy="73.4" r="1.8" fill="var(--good)"/><circle cx="37.3" cy="72.2" r="1.8" fill="var(--good)"/><circle cx="41.1" cy="68.7" r="1.8" fill="var(--good)"/><circle cx="41.5" cy="67.7" r="1.8" fill="var(--good)"/><circle cx="43.0" cy="67.2" r="1.8" fill="var(--good)"/><circle cx="43.3" cy="66.5" r="1.8" fill="var(--good)"/><circle cx="45.8" cy="62.5" r="1.8" fill="var(--good)"/><circle cx="46.0" cy="62.0" r="1.8" fill="var(--good)"/><circle cx="47.6" cy="61.3" r="1.8" fill="var(--good)"/><circle cx="47.8" cy="60.8" r="1.8" fill="var(--good)"/><circle cx="50.2" cy="60.7" r="1.8" fill="var(--good)"/><circle cx="58.5" cy="106.2" r="1.8" fill="var(--good)"/><circle cx="58.6" cy="106.2" r="1.8" fill="var(--good)"/><circle cx="58.8" cy="106.1" r="1.8" fill="var(--good)"/><circle cx="58.9" cy="106.0" r="1.8" fill="var(--good)"/><circle cx="59.0" cy="105.9" r="1.8" fill="var(--good)"/><circle cx="59.2" cy="105.8" r="1.8" fill="var(--good)"/><circle cx="59.3" cy="105.7" r="1.8" fill="var(--good)"/><circle cx="59.4" cy="105.6" r="1.8" fill="var(--good)"/><circle cx="59.6" cy="105.5" r="1.8" fill="var(--good)"/><circle cx="59.7" cy="105.4" r="1.8" fill="var(--good)"/><circle cx="59.8" cy="105.3" r="1.8" fill="var(--good)"/><circle cx="60.0" cy="105.3" r="1.8" fill="var(--good)"/><circle cx="60.1" cy="105.2" r="1.8" fill="var(--good)"/><circle cx="60.2" cy="105.1" r="1.8" fill="var(--good)"/><circle cx="60.4" cy="105.0" r="1.8" fill="var(--good)"/><circle cx="60.5" cy="104.9" r="1.8" fill="var(--good)"/><circle cx="60.6" cy="104.8" r="1.8" fill="var(--good)"/><circle cx="60.8" cy="104.7" r="1.8" fill="var(--good)"/><circle cx="60.9" cy="104.5" r="1.8" fill="var(--good)"/><circle cx="61.1" cy="104.3" r="1.8" fill="var(--good)"/><circle cx="61.3" cy="104.0" r="1.8" fill="var(--good)"/><circle cx="61.5" cy="103.7" r="1.8" fill="var(--good)"/><circle cx="61.7" cy="103.5" r="1.8" fill="var(--good)"/><circle cx="61.9" cy="103.2" r="1.8" fill="var(--good)"/><circle cx="62.1" cy="102.9" r="1.8" fill="var(--good)"/><circle cx="62.2" cy="102.7" r="1.8" fill="var(--good)"/><circle cx="177.9" cy="104.4" r="1.8" fill="var(--good)"/><circle cx="178.1" cy="104.2" r="1.8" fill="var(--good)"/><circle cx="178.2" cy="104.1" r="1.8" fill="var(--good)"/><circle cx="178.4" cy="103.9" r="1.8" fill="var(--good)"/><circle cx="178.5" cy="103.7" r="1.8" fill="var(--good)"/><circle cx="178.7" cy="103.5" r="1.8" fill="var(--good)"/><circle cx="179.0" cy="103.3" r="1.8" fill="var(--good)"/><circle cx="179.2" cy="103.2" r="1.8" fill="var(--good)"/><circle cx="179.3" cy="102.9" r="1.8" fill="var(--good)"/><circle cx="179.6" cy="102.5" r="1.8" fill="var(--good)"/><circle cx="179.7" cy="102.2" r="1.8" fill="var(--good)"/><circle cx="180.0" cy="101.5" r="1.8" fill="var(--good)"/><circle cx="180.2" cy="103.8" r="1.8" fill="var(--good)"/><circle cx="180.5" cy="103.2" r="1.8" fill="var(--good)"/><circle cx="180.7" cy="102.7" r="1.8" fill="var(--good)"/><circle cx="181.0" cy="102.2" r="1.8" fill="var(--good)"/><circle cx="181.1" cy="102.1" r="1.8" fill="var(--good)"/><circle cx="184.2" cy="101.7" r="1.8" fill="var(--good)"/><circle cx="184.5" cy="101.2" r="1.8" fill="var(--good)"/><circle cx="184.7" cy="100.8" r="1.8" fill="var(--good)"/><circle cx="185.0" cy="100.1" r="1.8" fill="var(--good)"/><circle cx="185.3" cy="99.4" r="1.8" fill="var(--good)"/><circle cx="185.6" cy="98.7" r="1.8" fill="var(--good)"/><circle cx="186.0" cy="97.7" r="1.8" fill="var(--good)"/><circle cx="186.3" cy="97.2" r="1.8" fill="var(--good)"/><circle cx="186.6" cy="96.3" r="1.8" fill="var(--good)"/><circle cx="187.0" cy="95.4" r="1.8" fill="var(--good)"/><circle cx="187.2" cy="94.8" r="1.8" fill="var(--good)"/><circle cx="187.8" cy="97.3" r="1.8" fill="var(--good)"/><circle cx="188.2" cy="96.6" r="1.8" fill="var(--good)"/><circle cx="188.5" cy="95.6" r="1.8" fill="var(--good)"/><circle cx="188.9" cy="94.6" r="1.8" fill="var(--good)"/><circle cx="189.4" cy="93.3" r="1.8" fill="var(--good)"/><circle cx="190.0" cy="91.8" r="1.8" fill="var(--good)"/><circle cx="190.3" cy="93.6" r="1.8" fill="var(--good)"/><circle cx="191.5" cy="92.7" r="1.8" fill="var(--good)"/><circle cx="192.0" cy="91.5" r="1.8" fill="var(--good)"/><circle cx="192.4" cy="90.2" r="1.8" fill="var(--good)"/><circle cx="193.0" cy="88.7" r="1.8" fill="var(--good)"/><circle cx="193.6" cy="86.9" r="1.8" fill="var(--good)"/><circle cx="194.3" cy="85.3" r="1.8" fill="var(--good)"/><circle cx="194.6" cy="84.6" r="1.8" fill="var(--good)"/><circle cx="195.4" cy="86.2" r="1.8" fill="var(--good)"/><circle cx="196.0" cy="84.3" r="1.8" fill="var(--good)"/><circle cx="196.8" cy="81.9" r="1.8" fill="var(--good)"/><circle cx="197.3" cy="83.4" r="1.8" fill="var(--good)"/><circle cx="199.9" cy="81.5" r="1.8" fill="var(--good)"/><circle cx="200.8" cy="79.2" r="1.8" fill="var(--good)"/><circle cx="201.7" cy="76.6" r="1.8" fill="var(--good)"/><circle cx="202.5" cy="74.4" r="1.8" fill="var(--good)"/><circle cx="277.0" cy="75.1" r="1.8" fill="var(--good)"/><circle cx="287.3" cy="72.0" r="1.8" fill="var(--good)"/><circle cx="288.3" cy="69.1" r="1.8" fill="var(--good)"/><circle cx="288.6" cy="68.8" r="1.8" fill="var(--good)"/><circle cx="290.2" cy="68.9" r="1.8" fill="var(--good)"/><circle cx="291.4" cy="65.4" r="1.8" fill="var(--good)"/><circle cx="291.7" cy="67.6" r="1.8" fill="var(--good)"/><circle cx="347.4" cy="65.2" r="1.8" fill="var(--good)"/><circle cx="348.6" cy="62.5" r="1.8" fill="var(--good)"/><circle cx="349.9" cy="59.3" r="1.8" fill="var(--good)"/><circle cx="350.5" cy="58.6" r="1.8" fill="var(--good)"/><circle cx="353.0" cy="58.9" r="1.8" fill="var(--good)"/><circle cx="354.3" cy="55.5" r="1.8" fill="var(--good)"/><circle cx="355.5" cy="55.6" r="1.8" fill="var(--good)"/><circle cx="361.2" cy="52.3" r="1.8" fill="var(--good)"/><circle cx="362.8" cy="48.3" r="1.8" fill="var(--good)"/><circle cx="364.6" cy="49.9" r="1.8" fill="var(--good)"/><circle cx="368.3" cy="46.1" r="1.8" fill="var(--good)"/><circle cx="369.5" cy="42.6" r="1.8" fill="var(--good)"/><circle cx="516.6" cy="40.8" r="1.8" fill="var(--good)"/><circle cx="518.5" cy="38.9" r="1.8" fill="var(--good)"/><circle cx="519.3" cy="36.6" r="1.8" fill="var(--good)"/><circle cx="520.2" cy="34.0" r="1.8" fill="var(--good)"/><circle cx="520.5" cy="33.6" r="1.8" fill="var(--good)"/><circle cx="521.8" cy="34.5" r="1.8" fill="var(--good)"/><circle cx="522.7" cy="31.9" r="1.8" fill="var(--good)"/><circle cx="523.8" cy="28.7" r="1.8" fill="var(--good)"/><circle cx="524.2" cy="31.3" r="1.8" fill="var(--good)"/><circle cx="526.3" cy="28.5" r="1.8" fill="var(--good)"/><circle cx="527.4" cy="25.2" r="1.8" fill="var(--good)"/><circle cx="528.6" cy="22.2" r="1.8" fill="var(--good)"/><circle cx="616.0" cy="36.0" r="1.8" fill="var(--good)"/><circle cx="616.8" cy="33.8" r="1.8" fill="var(--good)"/><circle cx="617.8" cy="31.3" r="1.8" fill="var(--good)"/><circle cx="618.0" cy="33.6" r="1.8" fill="var(--good)"/><circle cx="620.8" cy="31.4" r="1.8" fill="var(--good)"/><circle cx="621.7" cy="28.9" r="1.8" fill="var(--good)"/><circle cx="622.8" cy="25.9" r="1.8" fill="var(--good)"/><circle cx="623.3" cy="24.6" r="1.8" fill="var(--good)"/><circle cx="624.9" cy="25.2" r="1.8" fill="var(--good)"/><circle cx="626.0" cy="22.1" r="1.8" fill="var(--good)"/><circle cx="627.1" cy="21.6" r="1.8" fill="var(--good)"/><circle cx="629.5" cy="19.7" r="1.8" fill="var(--good)"/><circle cx="634.9" cy="10.5" r="1.8" fill="var(--good)"/><circle cx="635.8" cy="8.1" r="1.8" fill="var(--good)"/><circle cx="636.2" cy="7.3" r="1.8" fill="var(--good)"/><circle cx="637.5" cy="8.4" r="1.8" fill="var(--good)"/><circle cx="638.3" cy="6.0" r="1.8" fill="var(--good)"/><circle cx="639.4" cy="3.0" r="1.8" fill="var(--good)"/><circle cx="640.0" cy="5.0" r="1.8" fill="var(--good)"/>
+  </svg>
+  <div class="row" style="margin-top:8px">
+    <div><div class="big">29g 99s 76c</div>
+      <div class="muted">0.86g/h over 35.0h, 162 rounds</div></div>
+    <div style="text-align:right"><div class="muted">purse</div>
+      <div class="muted">37g 25s 83c &rarr; 95g 31s 99c</div></div>
+  </div>
+</div>
+
+<h1>By day</h1>
+<div class="card"><table>
+  <tr><th>Day</th><th>Crafted</th><th>Profit/oil</th><th>Sec/oil</th><th>Profit/h</th><th>Profit</th></tr>
+  <tr><td style="font-weight:700">10/4/2026</td><td>757</td>
+    <td class="good">1s 16c</td>
+    <td>32.1s</td>
+    <td>1.30g/h</td><td>8g 78s 12c</td></tr><tr><td style="font-weight:700">10/3/2026</td><td>1781</td>
+    <td class="good">1s 19c</td>
+    <td>40.8s</td>
+    <td>1.05g/h</td><td>21g 21s 64c</td></tr>
+</table></div>
+
+<h1>Batches &mdash; each starts and ends on zero dust</h1>
+<div class="card"><table>
+  <tr><th>Batch</th><th>Took</th><th>Crafted</th><th>Profit/oil</th><th>Sec/oil</th><th>Profit/h</th></tr>
+  <tr style="opacity:.75">
+    <td style="font-weight:700">7 <span class="muted">now</span></td>
+    <td>34m</td>
+    <td>158</td>
+    <td class="good">1s 16c</td>
+    <td>13.0s</td>
+    <td>3.20g/h</td></tr><tr>
+    <td style="font-weight:700">6</td>
+    <td>5.5h</td>
+    <td>300</td>
+    <td class="good">1s 16c</td>
+    <td>66.2s</td>
+    <td>0.63g/h</td></tr><tr>
+    <td style="font-weight:700">5</td>
+    <td>8.7h</td>
+    <td>299</td>
+    <td class="good">1s 16c</td>
+    <td>104.7s</td>
+    <td>0.40g/h</td></tr><tr>
+    <td style="font-weight:700">4</td>
+    <td>4.3h</td>
+    <td>382</td>
+    <td class="good">1s 16c</td>
+    <td>40.1s</td>
+    <td>1.04g/h</td></tr><tr>
+    <td style="font-weight:700">3</td>
+    <td>13.2h</td>
+    <td>690</td>
+    <td class="good">1s 17c</td>
+    <td>68.8s</td>
+    <td>0.61g/h</td></tr><tr>
+    <td style="font-weight:700">2</td>
+    <td>2.0h</td>
+    <td>548</td>
+    <td class="good">1s 16c</td>
+    <td>13.1s</td>
+    <td>3.19g/h</td></tr><tr>
+    <td style="font-weight:700">1</td>
+    <td>&mdash;</td>
+    <td>161</td>
+    <td class="good">1s 48c</td>
+    <td>&mdash;</td>
+    <td>&mdash;</td></tr>
+</table></div>
+
+<h1>Navigation</h1>
+<div class="card"><div class="row" style="margin-top:12px">
+    <div><strong>bartlett</strong></div>
+    <div class="bad">29%</div></div>
+  <div class="muted">12/41 arrived, median 10s</div>
+  <ul><li><span class="when" data-ts="1791134357805"></span>
+    <span class="who good">arrived</span>
+    <span class="what">8s &middot; 0.2 yd out &middot; 4 ticks</span></li><li><span class="when" data-ts="1791133856396"></span>
+    <span class="who good">arrived</span>
+    <span class="what">9s &middot; 1.0 yd out &middot; 4 ticks</span></li><li><span class="when" data-ts="1791133294042"></span>
+    <span class="who good">arrived</span>
+    <span class="what">12s &middot; 0.8 yd out &middot; 4 ticks</span></li><li><span class="when" data-ts="1791131563002"></span>
+    <span class="who good">arrived</span>
+    <span class="what">13s &middot; 1.1 yd out &middot; 4 ticks</span></li></ul><div class="row" style="margin-top:12px">
+    <div><strong>cain</strong></div>
+    <div class="warn">81%</div></div>
+  <div class="muted">25/31 arrived, median 59s</div>
+  <ul><li><span class="when" data-ts="1791135647965"></span>
+    <span class="who good">arrived</span>
+    <span class="what">33s &middot; 2.0 yd out &middot; 8 ticks</span></li><li><span class="when" data-ts="1791133937364"></span>
+    <span class="who good">arrived</span>
+    <span class="what">21s &middot; 0.6 yd out &middot; 8 ticks</span></li><li><span class="when" data-ts="1791133595596"></span>
+    <span class="who good">arrived</span>
+    <span class="what">20s &middot; 1.0 yd out &middot; 8 ticks</span></li><li><span class="when" data-ts="1791133091960"></span>
+    <span class="who good">arrived</span>
+    <span class="what">23s &middot; 0.8 yd out &middot; 9 ticks</span></li></ul><div class="row" style="margin-top:12px">
+    <div><strong>mordan</strong></div>
+    <div class="bad">38%</div></div>
+  <div class="muted">11/29 arrived, median 0s</div>
+  <ul><li><span class="when" data-ts="1791134855867"></span>
+    <span class="who good">arrived</span>
+    <span class="what">80s &middot; 0.9 yd out &middot; 27 ticks</span></li><li><span class="when" data-ts="1791133897871"></span>
+    <span class="who good">arrived</span>
+    <span class="what">37s &middot; 0.3 yd out &middot; 13 ticks</span></li><li><span class="when" data-ts="1791133556916"></span>
+    <span class="who good">arrived</span>
+    <span class="what">83s &middot; 1.0 yd out &middot; 27 ticks</span></li><li><span class="when" data-ts="1791132347917"></span>
+    <span class="who good">arrived</span>
+    <span class="what">96s &middot; 0.2 yd out &middot; 28 ticks</span></li></ul><div class="row" style="margin-top:12px">
+    <div><strong>mailbox</strong></div>
+    <div class="good">100%</div></div>
+  <div class="muted">24/24 arrived, median 28s</div>
+  <ul><li><span class="when" data-ts="1791134051132"></span>
+    <span class="who good">arrived</span>
+    <span class="what">21s &middot; 0.9 yd out &middot; 10 ticks</span></li><li><span class="when" data-ts="1791133623898"></span>
+    <span class="who good">arrived</span>
+    <span class="what">23s &middot; 1.3 yd out &middot; 11 ticks</span></li><li><span class="when" data-ts="1791133111096"></span>
+    <span class="who good">arrived</span>
+    <span class="what">15s &middot; 1.0 yd out &middot; 8 ticks</span></li><li><span class="when" data-ts="1791131396486"></span>
+    <span class="who good">arrived</span>
+    <span class="what">29s &middot; 1.1 yd out &middot; 13 ticks</span></li></ul><div class="row" style="margin-top:12px">
+    <div><strong>stairbase</strong></div>
+    <div class="bad">57%</div></div>
+  <div class="muted">12/21 arrived, median 50s</div>
+  <ul><li><span class="when" data-ts="1791134264991"></span>
+    <span class="who good">arrived</span>
+    <span class="what">93s &middot; 1.7 yd out &middot; 23 ticks</span></li><li><span class="when" data-ts="1791133683383"></span>
+    <span class="who good">arrived</span>
+    <span class="what">12s &middot; 2.2 yd out &middot; 6 ticks</span></li><li><span class="when" data-ts="1791133179749"></span>
+    <span class="who good">arrived</span>
+    <span class="what">65s &middot; 0.5 yd out &middot; 13 ticks</span></li><li><span class="when" data-ts="1791131415883"></span>
+    <span class="who good">arrived</span>
+    <span class="what">14s &middot; 2.0 yd out &middot; 5 ticks</span></li></ul><div class="row" style="margin-top:12px">
+    <div><strong>bartlett turn</strong></div>
+    <div class="bad">59%</div></div>
+  <div class="muted">10/17 arrived, median 23s</div>
+  <ul><li><span class="when" data-ts="1791134341243"></span>
+    <span class="who good">arrived</span>
+    <span class="what">14s &middot; 1.1 yd out &middot; 5 ticks</span></li><li><span class="when" data-ts="1791133842368"></span>
+    <span class="who good">arrived</span>
+    <span class="what">13s &middot; 0.9 yd out &middot; 5 ticks</span></li><li><span class="when" data-ts="1791133799616"></span>
+    <span class="who bad">stopped</span>
+    <span class="what">21s &middot; 33.4 yd out &middot; 11 ticks</span></li><li><span class="when" data-ts="1791133773776"></span>
+    <span class="who bad">stopped</span>
+    <span class="what">58s &middot; 33.4 yd out &middot; 32 ticks</span></li></ul><div class="row" style="margin-top:12px">
+    <div><strong>landing</strong></div>
+    <div class="warn">92%</div></div>
+  <div class="muted">12/13 arrived, median 27s</div>
+  <ul><li><span class="when" data-ts="1791135608473"></span>
+    <span class="who good">arrived</span>
+    <span class="what">76s &middot; 0.3 yd out &middot; 20 ticks</span></li><li><span class="when" data-ts="1791133912984"></span>
+    <span class="who good">arrived</span>
+    <span class="what">11s &middot; 0.6 yd out &middot; 3 ticks</span></li><li><span class="when" data-ts="1791133571407"></span>
+    <span class="who good">arrived</span>
+    <span class="what">10s &middot; 1.2 yd out &middot; 3 ticks</span></li><li><span class="when" data-ts="1791133064361"></span>
+    <span class="who good">arrived</span>
+    <span class="what">79s &middot; 0.4 yd out &middot; 27 ticks</span></li></ul><div class="row" style="margin-top:12px">
+    <div><strong>stairbend</strong></div>
+    <div class="good">100%</div></div>
+  <div class="muted">12/12 arrived, median 11s</div>
+  <ul><li><span class="when" data-ts="1791134281496"></span>
+    <span class="who good">arrived</span>
+    <span class="what">11s &middot; 0.5 yd out &middot; 12 ticks</span></li><li><span class="when" data-ts="1791133696817"></span>
+    <span class="who good">arrived</span>
+    <span class="what">9s &middot; 0.6 yd out &middot; 12 ticks</span></li><li><span class="when" data-ts="1791133198039"></span>
+    <span class="who good">arrived</span>
+    <span class="what">11s &middot; 0.4 yd out &middot; 11 ticks</span></li><li><span class="when" data-ts="1791131438711"></span>
+    <span class="who good">arrived</span>
+    <span class="what">16s &middot; 0.6 yd out &middot; 14 ticks</span></li></ul><div class="row" style="margin-top:12px">
+    <div><strong>stairtop</strong></div>
+    <div class="good">100%</div></div>
+  <div class="muted">12/12 arrived, median 22s</div>
+  <ul><li><span class="when" data-ts="1791134319342"></span>
+    <span class="who good">arrived</span>
+    <span class="what">31s &middot; 0.4 yd out &middot; 19 ticks</span></li><li><span class="when" data-ts="1791133712705"></span>
+    <span class="who good">arrived</span>
+    <span class="what">12s &middot; 0.5 yd out &middot; 15 ticks</span></li><li><span class="when" data-ts="1791133229203"></span>
+    <span class="who good">arrived</span>
+    <span class="what">21s &middot; 0.8 yd out &middot; 17 ticks</span></li><li><span class="when" data-ts="1791131500886"></span>
+    <span class="who good">arrived</span>
+    <span class="what">57s &middot; 0.4 yd out &middot; 27 ticks</span></li></ul>
+<div class="muted" style="margin-top:10px">Every leg is replayed from a hand-walked recording, not planned &mdash;
+  this client reports z&nbsp;=&nbsp;0 everywhere, so a planner cannot tell the top of the stairs from the floor
+  beneath it. A leg that did not arrive is counted the same as one that did.</div></div>
+
+<h1>Auction house &mdash; price and volume paid</h1>
+<div class="card">
+  <svg class="spark" style="height:96px" viewBox="0 0 640 96" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Dust price paid against the cap">
+    <line x1="0" y1="95.6" x2="640" y2="95.6" stroke="var(--warn)" stroke-width="1" stroke-dasharray="5 4" vector-effect="non-scaling-stroke"/>
+    <rect x="7.0" y="5.1" width="10" height="69.1" fill="var(--info)" opacity=".55" rx="1"/><circle cx="12.0" cy="5.1" r="2.4" fill="var(--bad)"/><rect x="29.8" y="5.1" width="10" height="69.1" fill="var(--info)" opacity=".55" rx="1"/><circle cx="34.8" cy="5.1" r="2.4" fill="var(--bad)"/><rect x="52.6" y="5.0" width="10" height="69.1" fill="var(--info)" opacity=".55" rx="1"/><circle cx="57.6" cy="5.0" r="2.4" fill="var(--bad)"/><rect x="75.4" y="4.4" width="10" height="69.1" fill="var(--info)" opacity=".55" rx="1"/><circle cx="80.4" cy="4.4" r="2.4" fill="var(--bad)"/><rect x="98.3" y="3.6" width="10" height="13.8" fill="var(--info)" opacity=".55" rx="1"/><circle cx="103.3" cy="3.6" r="2.4" fill="var(--bad)"/><rect x="121.1" y="5.9" width="10" height="69.1" fill="var(--info)" opacity=".55" rx="1"/><circle cx="126.1" cy="5.9" r="2.4" fill="var(--bad)"/><rect x="143.9" y="5.4" width="10" height="69.1" fill="var(--info)" opacity=".55" rx="1"/><circle cx="148.9" cy="5.4" r="2.4" fill="var(--bad)"/><rect x="166.7" y="4.7" width="10" height="69.1" fill="var(--info)" opacity=".55" rx="1"/><circle cx="171.7" cy="4.7" r="2.4" fill="var(--bad)"/><rect x="189.5" y="4.5" width="10" height="69.1" fill="var(--info)" opacity=".55" rx="1"/><circle cx="194.5" cy="4.5" r="2.4" fill="var(--bad)"/><rect x="212.3" y="4.4" width="10" height="69.1" fill="var(--info)" opacity=".55" rx="1"/><circle cx="217.3" cy="4.4" r="2.4" fill="var(--bad)"/><rect x="235.1" y="4.3" width="10" height="69.1" fill="var(--info)" opacity=".55" rx="1"/><circle cx="240.1" cy="4.3" r="2.4" fill="var(--bad)"/><rect x="258.0" y="4.3" width="10" height="69.1" fill="var(--info)" opacity=".55" rx="1"/><circle cx="263.0" cy="4.3" r="2.4" fill="var(--bad)"/><rect x="280.8" y="4.3" width="10" height="13.8" fill="var(--info)" opacity=".55" rx="1"/><circle cx="285.8" cy="4.3" r="2.4" fill="var(--bad)"/><rect x="303.6" y="4.3" width="10" height="13.8" fill="var(--info)" opacity=".55" rx="1"/><circle cx="308.6" cy="4.3" r="2.4" fill="var(--bad)"/><rect x="326.4" y="4.3" width="10" height="13.8" fill="var(--info)" opacity=".55" rx="1"/><circle cx="331.4" cy="4.3" r="2.4" fill="var(--bad)"/><rect x="349.2" y="4.3" width="10" height="13.8" fill="var(--info)" opacity=".55" rx="1"/><circle cx="354.2" cy="4.3" r="2.4" fill="var(--bad)"/><rect x="372.0" y="4.3" width="10" height="13.8" fill="var(--info)" opacity=".55" rx="1"/><circle cx="377.0" cy="4.3" r="2.4" fill="var(--bad)"/><rect x="394.9" y="4.3" width="10" height="13.8" fill="var(--info)" opacity=".55" rx="1"/><circle cx="399.9" cy="4.3" r="2.4" fill="var(--bad)"/><rect x="417.7" y="4.5" width="10" height="69.1" fill="var(--info)" opacity=".55" rx="1"/><circle cx="422.7" cy="4.5" r="2.4" fill="var(--bad)"/><rect x="440.5" y="4.5" width="10" height="69.1" fill="var(--info)" opacity=".55" rx="1"/><circle cx="445.5" cy="4.5" r="2.4" fill="var(--bad)"/><rect x="463.3" y="4.5" width="10" height="69.1" fill="var(--info)" opacity=".55" rx="1"/><circle cx="468.3" cy="4.5" r="2.4" fill="var(--bad)"/><rect x="486.1" y="4.4" width="10" height="69.1" fill="var(--info)" opacity=".55" rx="1"/><circle cx="491.1" cy="4.4" r="2.4" fill="var(--bad)"/><rect x="508.9" y="5.0" width="10" height="69.1" fill="var(--info)" opacity=".55" rx="1"/><circle cx="513.9" cy="5.0" r="2.4" fill="var(--bad)"/><rect x="531.7" y="4.5" width="10" height="69.1" fill="var(--info)" opacity=".55" rx="1"/><circle cx="536.7" cy="4.5" r="2.4" fill="var(--bad)"/><rect x="554.6" y="4.4" width="10" height="69.1" fill="var(--info)" opacity=".55" rx="1"/><circle cx="559.6" cy="4.4" r="2.4" fill="var(--bad)"/><rect x="577.4" y="4.3" width="10" height="69.1" fill="var(--info)" opacity=".55" rx="1"/><circle cx="582.4" cy="4.3" r="2.4" fill="var(--bad)"/><rect x="600.2" y="3.1" width="10" height="13.8" fill="var(--info)" opacity=".55" rx="1"/><circle cx="605.2" cy="3.1" r="2.4" fill="var(--bad)"/><rect x="623.0" y="3.1" width="10" height="13.8" fill="var(--info)" opacity=".55" rx="1"/><circle cx="628.0" cy="3.1" r="2.4" fill="var(--bad)"/>
+  </svg>
+  <div class="muted" style="margin-top:8px">cap 2s 55c (dashed) &middot; bar height = units bought &middot;
+    break-even is 3s 16c, so the cap is a discipline, not a solvency limit</div>
+  <table style="margin-top:10px">
+    <tr><th>When</th><th>Item</th><th>Qty</th><th>Unit</th></tr>
+    <tr><td class="muted" data-ts="1790788365388"></td>
+      <td>greater</td><td>20</td>
+      <td class="bad">21s 89c</td></tr><tr><td class="muted" data-ts="1790784680412"></td>
+      <td>greater</td><td>20</td>
+      <td class="bad">21s 89c</td></tr><tr><td class="muted" data-ts="1790679172261"></td>
+      <td>greater</td><td>100</td>
+      <td class="bad">21s 65c</td></tr><tr><td class="muted" data-ts="1790679152921"></td>
+      <td>greater</td><td>100</td>
+      <td class="bad">21s 62c</td></tr><tr><td class="muted" data-ts="1790679132725"></td>
+      <td>greater</td><td>100</td>
+      <td class="bad">21s 60c</td></tr><tr><td class="muted" data-ts="1790679112966"></td>
+      <td>greater</td><td>100</td>
+      <td class="bad">21s 51c</td></tr><tr><td class="muted" data-ts="1790671702411"></td>
+      <td>greater</td><td>100</td>
+      <td class="bad">21s 62c</td></tr><tr><td class="muted" data-ts="1790671682466"></td>
+      <td>greater</td><td>100</td>
+      <td class="bad">21s 60c</td></tr><tr><td class="muted" data-ts="1790671662383"></td>
+      <td>greater</td><td>100</td>
+      <td class="bad">21s 60c</td></tr><tr><td class="muted" data-ts="1790671641380"></td>
+      <td>greater</td><td>100</td>
+      <td class="bad">21s 60c</td></tr>
+  </table>
+</div>
+
+<h1>Activity</h1>
+<div class="card">
+  <div class="chips"><button class="chip" data-filter="all" aria-pressed="true">all</button><button class="chip" data-filter="round" aria-pressed="false">round</button><button class="chip" data-filter="auction" aria-pressed="false">auction</button><button class="chip" data-filter="nav" aria-pressed="false">nav</button><button class="chip" data-filter="fault" aria-pressed="false">fault</button><button class="chip" data-filter="supervise" aria-pressed="false">supervise</button></div>
+  <ul id="feed"><li data-type="round">
+    <span class="when" data-ts="1791135524181"></span><span class="who">round</span>
+    <span class="what">round 24: made 14, sold 14 for 16s 24c profit at 2.14s a craft - 28 slots free</span></li><li data-type="round">
+    <span class="when" data-ts="1791135411819"></span><span class="who">round</span>
+    <span class="what">round 23: made 33, sold 33 for 38s 28c profit at 2.06s a craft - 33 slots free</span></li><li data-type="round">
+    <span class="when" data-ts="1791135197136"></span><span class="who">round</span>
+    <span class="what">round 22: made 27, sold 27 for 31s 32c profit at 2.37s a craft - 27 slots free</span></li><li data-type="round">
+    <span class="when" data-ts="1791135028328"></span><span class="who">round</span>
+    <span class="what">round 21: made 24, sold 24 for 27s 84c profit at 2.17s a craft - 24 slots free</span></li><li data-type="round">
+    <span class="when" data-ts="1791134771268"></span><span class="who">round</span>
+    <span class="what">round 19: made 9, sold 9 for 10s 44c profit at 2.67s a craft - 26 slots free</span></li><li data-type="round">
+    <span class="when" data-ts="1791134695422"></span><span class="who">round</span>
+    <span class="what">round 18: made 27, sold 27 for 31s 32c profit at 2.67s a craft - 27 slots free</span></li><li data-type="round">
+    <span class="when" data-ts="1791134526323"></span><span class="who">round</span>
+    <span class="what">round 17: made 24, sold 24 for 27s 84c profit at 2.33s a craft - 24 slots free</span></li><li data-type="round">
+    <span class="when" data-ts="1791133465364"></span><span class="who">round</span>
+    <span class="what">round 15: made 22, sold 22 for 25s 52c profit at 2.55s a craft - 36 slots free</span></li><li data-type="round">
+    <span class="when" data-ts="1791132979486"></span><span class="who">round</span>
+    <span class="what">round 13: made 34, sold 34 for 39s 44c profit at 2.47s a craft - 35 slots free</span></li><li data-type="round">
+    <span class="when" data-ts="1791132765363"></span><span class="who">round</span>
+    <span class="what">round 12: made 35, sold 35 for 40s 60c profit at 2.06s a craft - 35 slots free</span></li><li data-type="round">
+    <span class="when" data-ts="1791132550611"></span><span class="who">round</span>
+    <span class="what">round 11: made 29, sold 29 for 33s 64c profit at 1.86s a craft - 29 slots free</span></li><li data-type="round">
+    <span class="when" data-ts="1791132246399"></span><span class="who">round</span>
+    <span class="what">round 9: made 15, sold 15 for 17s 40c profit at 2.53s a craft - 31 slots free</span></li><li data-type="round">
+    <span class="when" data-ts="1791132136035"></span><span class="who">round</span>
+    <span class="what">round 8: made 34, sold 34 for 39s 44c profit at 2.41s a craft - 34 slots free</span></li><li data-type="round">
+    <span class="when" data-ts="1791131929451"></span><span class="who">round</span>
+    <span class="what">round 7: made 28, sold 28 for 32s 48c profit at 2.36s a craft - 28 slots free</span></li><li data-type="round">
+    <span class="when" data-ts="1791131747059"></span><span class="who">round</span>
+    <span class="what">round 6: made 25, sold 25 for 29s 0c profit at 2.56s a craft - 25 slots free</span></li><li data-type="round">
+    <span class="when" data-ts="1791131203825"></span><span class="who">round</span>
+    <span class="what">round 4: made 3, sold 3 for 3s 48c profit at 2.67s a craft - 24 slots free</span></li><li data-type="round">
+    <span class="when" data-ts="1791131149845"></span><span class="who">round</span>
+    <span class="what">round 3: made 28, sold 28 for 32s 48c profit at 1.86s a craft - 28 slots free</span></li><li data-type="round">
+    <span class="when" data-ts="1791130965991"></span><span class="who">round</span>
+    <span class="what">round 2: made 25, sold 25 for 29s 0c profit at 2.08s a craft - 25 slots free</span></li><li data-type="round">
+    <span class="when" data-ts="1791130799190"></span><span class="who">round</span>
+    <span class="what">round 1: made 22, sold 22 for 25s 52c profit at 2.27s a craft - 22 slots free</span></li><li data-type="round">
+    <span class="when" data-ts="1791113605584"></span><span class="who">round</span>
+    <span class="what">round 17: made 34, sold 34 for 39s 44c profit at 2.00s a craft - 39 slots free</span></li><li data-type="round">
+    <span class="when" data-ts="1791113384529"></span><span class="who">round</span>
+    <span class="what">round 16: made 37, sold 37 for 42s 92c profit at 2.27s a craft - 37 slots free</span></li><li data-type="round">
+    <span class="when" data-ts="1791113157586"></span><span class="who">round</span>
+    <span class="what">round 15: made 31, sold 31 for 35s 96c profit at 2.26s a craft - 31 slots free</span></li><li data-type="round">
+    <span class="when" data-ts="1791112743532"></span><span class="who">round</span>
+    <span class="what">round 13: made 8, sold 8 for 9s 28c profit at 3.00s a craft - 30 slots free</span></li><li data-type="round">
+    <span class="when" data-ts="1791112673589"></span><span class="who">round</span>
+    <span class="what">round 12: made 35, sold 35 for 40s 60c profit at 2.46s a craft - 35 slots free</span></li><li data-type="round">
+    <span class="when" data-ts="1791112455175"></span><span class="who">round</span>
+    <span class="what">round 11: made 29, sold 29 for 33s 64c profit at 2.48s a craft - 29 slots free</span></li><li data-type="round">
+    <span class="when" data-ts="1791112274696"></span><span class="who">round</span>
+    <span class="what">round 10: made 26, sold 26 for 30s 16c profit at 2.46s a craft - 26 slots free</span></li><li data-type="round">
+    <span class="when" data-ts="1791112018907"></span><span class="who">round</span>
+    <span class="what">round 8: made 5, sold 5 for 5s 80c profit at 2.80s a craft - 28 slots free</span></li><li data-type="round">
+    <span class="when" data-ts="1791111960375"></span><span class="who">round</span>
+    <span class="what">round 7: made 29, sold 29 for 33s 64c profit at 2.62s a craft - 29 slots free</span></li><li data-type="round">
+    <span class="when" data-ts="1791111783124"></span><span class="who">round</span>
+    <span class="what">round 6: made 26, sold 26 for 30s 16c profit at 2.54s a craft - 26 slots free</span></li><li data-type="round">
+    <span class="when" data-ts="1791111618914"></span><span class="who">round</span>
+    <span class="what">round 5: made 21, sold 21 for 24s 36c profit at 2.38s a craft - 23 slots free</span></li><li data-type="round">
+    <span class="when" data-ts="1791111260061"></span><span class="who">round</span>
+    <span class="what">round 3: made 18, sold 18 for 20s 88c profit at 2.33s a craft - 22 slots free</span></li><li data-type="round">
+    <span class="when" data-ts="1791083201000"></span><span class="who">supervise</span>
+    <span class="what">round 2 ended (exit 3) -&gt; "nav-stuck"</span></li><li data-type="supervise">
+    <span class="when" data-ts="1791083201000"></span><span class="who">supervise</span>
+    <span class="what">arrived within 2.3 yd of the head of tq_mordan_to_dropoff |     tq_mordan_to_dropoff ok (after nudging to the head) |     tq_dropoff_to_cain ok |   stop.flag - abandoning the trip |   could not reach the postbox | oil loop ended - 0 oils sold, 0g 0s 0c earned over 1 round(s)</span></li><li data-type="supervise">
+    <span class="when" data-ts="1791083201000"></span><span class="who">supervise</span>
+    <span class="what">navigation stalled - the loop re-orients on restart, so this is worth retrying</span></li><li data-type="supervise">
+    <span class="when" data-ts="1791083201000"></span><span class="who">supervise</span>
+    <span class="what">restarting in 5s</span></li><li data-type="supervise">
+    <span class="when" data-ts="1791083201000"></span><span class="who">supervise</span>
+    <span class="what">stop.flag present - exiting</span></li><li data-type="supervise">
+    <span class="when" data-ts="1791083201000"></span><span class="who">supervise</span>
+    <span class="what">oil supervisor exited</span></li><li data-type="supervise">
+    <span class="when" data-ts="1791083102000"></span><span class="who">supervise</span>
+    <span class="what">round 2: starting oil.js</span></li><li data-type="round">
+    <span class="when" data-ts="1791083097000"></span><span class="who">supervise</span>
+    <span class="what">round 1 ended (exit 3) -&gt; "unknown"</span></li><li data-type="supervise">
+    <span class="when" data-ts="1791083097000"></span><span class="who">supervise</span>
+    <span class="what">tq_mordan_to_dropoff ok |     tq_dropoff_to_cain ok |     tq_cain_to_mailbox ok |   opened (right-click at 1434,800) - inbox 55 |   the post gave us no dust - stopping | oil loop ended - 0 oils sold, 0g 0s 0c earned over 1 round(s)</span></li><li data-type="supervise">
+    <span class="when" data-ts="1791083097000"></span><span class="who">supervise</span>
+    <span class="what">restarting in 5s</span></li><li data-type="supervise">
+    <span class="when" data-ts="1791082850000"></span><span class="who">supervise</span>
+    <span class="what">oil supervisor started - oil.js will be restarted after every stop</span></li><li data-type="supervise">
+    <span class="when" data-ts="1791082850000"></span><span class="who">supervise</span>
+    <span class="what">round 1: starting oil.js</span></li><li data-type="round">
+    <span class="when" data-ts="1791082728000"></span><span class="who">supervise</span>
+    <span class="what">round 5 ended (exit 3) -&gt; "nav-stuck"</span></li><li data-type="supervise">
+    <span class="when" data-ts="1791082728000"></span><span class="who">supervise</span>
+    <span class="what">no progress even jumping - something is genuinely in the way. Stopping. |     retrying "tq_cain_to_mailbox" from where we stand |     resume did not take it: --resume refused: 22.7 yd off every straight run of "tq_cain_to_mailbox" (limit 3). Not standing on this leg. |     stuck at (65.71, 3</span></li><li data-type="supervise">
+    <span class="when" data-ts="1791082728000"></span><span class="who">supervise</span>
+    <span class="what">navigation stalled - the loop re-orients on restart, so this is worth retrying</span></li><li data-type="supervise">
+    <span class="when" data-ts="1791082728000"></span><span class="who">supervise</span>
+    <span class="what">"nav-stuck" has persisted 5 times and is not clearing itself.</span></li><li data-type="supervise">
+    <span class="when" data-ts="1791082728000"></span><span class="who">supervise</span>
+    <span class="what">A person needs to look at the screen. Exiting so Claude is woken.</span></li><li data-type="supervise">
+    <span class="when" data-ts="1791082728000"></span><span class="who">supervise</span>
+    <span class="what">oil supervisor exited</span></li><li data-type="supervise">
+    <span class="when" data-ts="1791082656000"></span><span class="who">supervise</span>
+    <span class="what">round 5: starting oil.js</span></li><li data-type="round">
+    <span class="when" data-ts="1791082616000"></span><span class="who">supervise</span>
+    <span class="what">round 4 ended (exit 3) -&gt; "nav-stuck"</span></li><li data-type="supervise">
+    <span class="when" data-ts="1791082616000"></span><span class="who">supervise</span>
+    <span class="what">no progress even jumping - something is genuinely in the way. Stopping. |     retrying "tq_cain_to_mailbox" from where we stand |     resume did not take it: --resume refused: 15.1 yd off every straight run of "tq_cain_to_mailbox" (limit 3). Not standing on this leg. |     stuck at (66.63, 3</span></li><li data-type="supervise">
+    <span class="when" data-ts="1791082616000"></span><span class="who">supervise</span>
+    <span class="what">navigation stalled - the loop re-orients on restart, so this is worth retrying</span></li><li data-type="supervise">
+    <span class="when" data-ts="1791082616000"></span><span class="who">supervise</span>
+    <span class="what">restarting in 40s</span></li><li data-type="supervise">
+    <span class="when" data-ts="1791082562000"></span><span class="who">supervise</span>
+    <span class="what">round 4: starting oil.js</span></li><li data-type="round">
+    <span class="when" data-ts="1791082542000"></span><span class="who">supervise</span>
+    <span class="what">round 3 ended (exit 3) -&gt; "nav-stuck"</span></li><li data-type="supervise">
+    <span class="when" data-ts="1791082542000"></span><span class="who">supervise</span>
+    <span class="what">no progress even jumping - something is genuinely in the way. Stopping. |     retrying "tq_cain_to_mailbox" from where we stand |     resume did not take it: --resume refused: 15.1 yd off every straight run of "tq_cain_to_mailbox" (limit 3). Not standing on this leg. |     stuck at (66.63, 3</span></li><li data-type="supervise">
+    <span class="when" data-ts="1791082542000"></span><span class="who">supervise</span>
+    <span class="what">navigation stalled - the loop re-orients on restart, so this is worth retrying</span></li><li data-type="supervise">
+    <span class="when" data-ts="1791082542000"></span><span class="who">supervise</span>
+    <span class="what">restarting in 20s</span></li><li data-type="supervise">
+    <span class="when" data-ts="1791082488000"></span><span class="who">supervise</span>
+    <span class="what">round 3: starting oil.js</span></li><li data-type="round">
+    <span class="when" data-ts="1791082478000"></span><span class="who">supervise</span>
+    <span class="what">round 2 ended (exit 3) -&gt; "nav-stuck"</span></li><li data-type="supervise">
+    <span class="when" data-ts="1791082478000"></span><span class="who">supervise</span>
+    <span class="what">no progress even jumping - something is genuinely in the way. Stopping. |     retrying "tq_cain_to_mailbox" from where we stand |     resume did not take it: --resume refused: 15.1 yd off every straight run of "tq_cain_to_mailbox" (limit 3). Not standing on this leg. |     stuck at (66.63, 3</span></li><li data-type="supervise">
+    <span class="when" data-ts="1791082478000"></span><span class="who">supervise</span>
+    <span class="what">navigation stalled - the loop re-orients on restart, so this is worth retrying</span></li><li data-type="supervise">
+    <span class="when" data-ts="1791082478000"></span><span class="who">supervise</span>
+    <span class="what">restarting in 10s</span></li><li data-type="supervise">
+    <span class="when" data-ts="1791082417000"></span><span class="who">supervise</span>
+    <span class="what">round 2: starting oil.js</span></li><li data-type="round">
+    <span class="when" data-ts="1791082412000"></span><span class="who">supervise</span>
+    <span class="what">round 1 ended (exit 3) -&gt; "nav-stuck"</span></li><li data-type="supervise">
+    <span class="when" data-ts="1791082412000"></span><span class="who">supervise</span>
+    <span class="what">no progress even jumping - something is genuinely in the way. Stopping. |     retrying "tq_cain_to_mailbox" from where we stand |     resume did not take it: --resume refused: 15.1 yd off every straight run of "tq_cain_to_mailbox" (limit 3). Not standing on this leg. |     stuck at (66.63, 3</span></li><li data-type="supervise">
+    <span class="when" data-ts="1791082412000"></span><span class="who">supervise</span>
+    <span class="what">navigation stalled - the loop re-orients on restart, so this is worth retrying</span></li><li data-type="supervise">
+    <span class="when" data-ts="1791082412000"></span><span class="who">supervise</span>
+    <span class="what">restarting in 5s</span></li><li data-type="round">
+    <span class="when" data-ts="1791082313660"></span><span class="who">round</span>
+    <span class="what">round 7: made 39, sold 39 for 45s 24c profit at 2.10s a craft - 47 slots free</span></li></ul>
+</div>
+
+<div class="muted">Derived at request time from <code>oil-rounds.jsonl</code>, <code>oil-health.jsonl</code>,
+  <code>purchases.jsonl</code>, <code>traces/</code> and the logs. Refreshes every 30s.
+  This page never touches the game.</div>
+</div>
+<script>
+// Relative times, recomputed every second so "1 second ago" is actually true.
+// Rendering them server-side would freeze them until the next page load.
+function rel(ms) {
+  var s = Math.round((Date.now() - ms) / 1000);
+  if (s < 0) s = 0;
+  if (s < 60) return s + (s === 1 ? ' second ago' : ' seconds ago');
+  var m = Math.round(s / 60);
+  if (m < 60) return m + (m === 1 ? ' minute ago' : ' minutes ago');
+  var h = Math.floor(m / 60), rm = m % 60;
+  if (h < 24) return h + 'h' + (rm ? ' ' + rm + 'm' : '') + ' ago';
+  var dd = Math.floor(h / 24);
+  return dd + (dd === 1 ? ' day ago' : ' days ago');
+}
+function tick() {
+  document.querySelectorAll('[data-ts]').forEach(function (el) {
+    el.textContent = rel(Number(el.getAttribute('data-ts')));
+  });
+}
+function applyFilter(want) {
+  document.querySelectorAll('.chip').forEach(function (c) {
+    c.setAttribute('aria-pressed', String(c.dataset.filter === want));
+  });
+  document.querySelectorAll('#feed li').forEach(function (li) {
+    li.style.display = (want === 'all' || li.dataset.type === want) ? '' : 'none';
+  });
+  if (location.hash.slice(1) !== want) history.replaceState(null, '', want === 'all' ? location.pathname : '#' + want);
+}
+document.querySelectorAll('.chip').forEach(function (c) {
+  c.addEventListener('click', function () { applyFilter(c.dataset.filter); });
+});
+if (location.hash.slice(1)) applyFilter(location.hash.slice(1));
+tick(); setInterval(tick, 1000);
+</script>
+</body></html>
