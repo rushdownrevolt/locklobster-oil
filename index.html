@@ -42,7 +42,7 @@ th{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.06
     <span class="muted" data-ts="1791202907850"></span></div>
   <div class="verdict bad" style="font-size:30px">stale</div>
   <div class="muted" style="margin-top:4px">at 69.3, 39.4
-    &middot; no sample for 12 min - the loop may have stopped</div>
+    &middot; no sample for 18 min - the loop may have stopped</div>
   <div class="grid" style="margin-top:14px">
     <div class="stat"><div class="k">Oil</div><div class="v ">6</div></div>
     <div class="stat"><div class="k">Seeds</div><div class="v ">62</div></div>
@@ -51,7 +51,7 @@ th{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.06
     <div class="stat"><div class="k">Free</div><div class="v ">45</div></div>
     <div class="stat"><div class="k">Purse</div><div class="v ">113g 63s 19c</div></div>
   </div>
-  <img src="live.jpg?t=1791203603317" alt="live view" style="width:100%;margin-top:14px;
+  <img src="live.jpg?t=1791203969414" alt="live view" style="width:100%;margin-top:14px;
     border-radius:8px;border:1px solid var(--line);display:block" onerror="this.style.display='none'">
 </div>
 
@@ -74,10 +74,10 @@ th{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.06
   <div class="row"><h1 style="margin:0">Today</h1>
     <span class="muted">1s 16c an oil</span></div>
   <div class="grid">
-    <div class="stat"><div class="k">Profit 1h</div><div class="v good">0.87g/h</div></div>
+    <div class="stat"><div class="k">Profit 1h</div><div class="v good">0.74g/h</div></div>
     <div class="stat"><div class="k">Profit 24h</div><div class="v good">0.97g/h</div></div>
-    <div class="stat"><div class="k">Sec/oil 1h</div><div class="v ">47.8s</div></div>
-    <div class="stat"><div class="k">Sec/oil 24h</div><div class="v ">42.9s</div></div>
+    <div class="stat"><div class="k">Sec/oil 1h</div><div class="v ">56.1s</div></div>
+    <div class="stat"><div class="k">Sec/oil 24h</div><div class="v ">43.1s</div></div>
     <div class="stat"><div class="k">Stalls 24h</div><div class="v bad">16</div></div>
     <div class="stat"><div class="k">Lost 24h</div><div class="v bad">21.5h</div></div>
   </div>
@@ -198,8 +198,8 @@ th{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.06
 <h1>Navigation</h1>
 <div class="card"><div class="row" style="margin-top:12px">
     <div><strong>mordan</strong></div>
-    <div class="bad">69%</div></div>
-  <div class="muted">20/29 arrived, median 76s</div>
+    <div class="bad">68%</div></div>
+  <div class="muted">19/28 arrived, median 78s</div>
   <ul><li><span class="when" data-ts="1791175591004"></span>
     <span class="who bad">stopped</span>
     <span class="what">37s &middot; 7.7 yd out &middot; 22 ticks</span></li><li><span class="when" data-ts="1791175543338"></span>
@@ -295,7 +295,7 @@ th{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.06
     <span class="what">12s &middot; 0.3 yd out &middot; 5 ticks</span></li></ul><div class="row" style="margin-top:12px">
     <div><strong>mailbox</strong></div>
     <div class="good">100%</div></div>
-  <div class="muted">18/18 arrived, median 25s &middot; 1 refused to start</div>
+  <div class="muted">18/18 arrived, median 25s &middot; 2 refused to start</div>
   <ul><li><span class="when" data-ts="1791174644793"></span>
     <span class="who good">arrived</span>
     <span class="what">23s &middot; 1.0 yd out &middot; 10 ticks</span></li><li><span class="when" data-ts="1791173592779"></span>
@@ -631,7 +631,9 @@ th{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.06
 <h1>Activity</h1>
 <div class="card">
   <div class="chips"><button class="chip" data-filter="all" aria-pressed="true">all</button><button class="chip" data-filter="round" aria-pressed="false">round</button><button class="chip" data-filter="auction" aria-pressed="false">auction</button><button class="chip" data-filter="nav" aria-pressed="false">nav</button><button class="chip" data-filter="fault" aria-pressed="false">fault</button><button class="chip" data-filter="supervise" aria-pressed="false">supervise</button></div>
-  <ul id="feed"><li data-type="round">
+  <ul id="feed"><li data-type="nav">
+    <span class="when">latest</span><span class="who">nav</span>
+    <span class="what">tq_cain_to_mailbox: FAILED - paused - paused - human input at 2026-10-05T08:30:11.9046144-04:00; resuming after 20s of no input</span></li><li data-type="round">
     <span class="when" data-ts="1791202730360"></span><span class="who">round</span>
     <span class="what">round 1: made 0, sold 5 for 5s 80c profit - 47 slots free</span></li><li data-type="round">
     <span class="when" data-ts="1791202149329"></span><span class="who">round</span>
@@ -769,9 +771,7 @@ th{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.06
     <span class="when" data-ts="1791082728000"></span><span class="who">supervise</span>
     <span class="what">"nav-stuck" has persisted 5 times and is not clearing itself.</span></li><li data-type="supervise">
     <span class="when" data-ts="1791082728000"></span><span class="who">supervise</span>
-    <span class="what">A person needs to look at the screen. Exiting so Claude is woken.</span></li><li data-type="supervise">
-    <span class="when" data-ts="1791082728000"></span><span class="who">supervise</span>
-    <span class="what">oil supervisor exited</span></li></ul>
+    <span class="what">A person needs to look at the screen. Exiting so Claude is woken.</span></li></ul>
 </div>
 
 <div class="muted">Derived at request time from <code>oil-rounds.jsonl</code>, <code>oil-health.jsonl</code>,
